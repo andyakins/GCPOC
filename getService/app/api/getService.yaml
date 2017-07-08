@@ -1,16 +1,17 @@
 swagger: "2.0"
-
 info:
     title: "Google Cloud POC getService API"
     version: "1.0"
-
 basePath: /v1.0
-
+schemes:
+  - http
 paths:
-  /list/:
+  /list:
     get:
+      produces:
+        - application/json
       responses:
-        '200':
+        "200":
           description: 'Get a list of all items in the DB'
           schema:
             type: array
