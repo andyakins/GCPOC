@@ -10,7 +10,8 @@ RUN addgroup -S mysql \
     && mv /tmp/my.cnf /etc/mysql/my.cnf \
     && mkdir /run/mysqld \
     && chown -R mysql:mysql /run/mysqld \
-    && chmod -R 777 /run/mysqld
+    && chmod -R 777 /run/mysqld \
+    && chmod 777 /docker-entrypoint.sh
 
 EXPOSE 3306
 ENTRYPOINT ["/docker-entrypoint.sh"]
