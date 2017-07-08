@@ -1,0 +1,25 @@
+swagger: "2.0"
+info:
+    title: "Google Cloud POC postService API"
+    version: "1.0"
+    license:
+      name: MIT
+basePath: /v1.0
+schemes:
+  - http
+produces:
+  - application/json
+paths:
+  /add:
+    post:
+      operationId: api.add.post
+      parameters:
+        - name: instring
+          in: formData
+          required: true
+          type: string
+      responses:
+        "201":
+          description: "Item was added to the database"
+          schema:
+            type: string

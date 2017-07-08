@@ -14,7 +14,7 @@ paths:
     get:
       responses:
         "200":
-          description: 'Get a list of all items in the DB'
+          description: "Get a list of all items in the DB"
           schema:
             type: array
             items:
