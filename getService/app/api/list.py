@@ -1,4 +1,4 @@
-data = {"One","Two","Three"}
+data = ["One","Two","Three"]
 
 def search() -> list:
     return data
