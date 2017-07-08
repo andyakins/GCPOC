@@ -1,5 +1,5 @@
 import connexion
 
-app = connexion.FlaskApp(__name__, specification_dir='api/')
-app.add_api('getService.yaml')
-app.run(port=8080)
+app = connexion.App(__name__, 8080, specification_dir='api/')
+app.add_api('getService.yaml', resolver=RestyResolver('api'))
+app.run()
