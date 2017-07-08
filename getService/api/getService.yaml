@@ -13,6 +13,6 @@ paths:
         '200':
           description: 'Get a list of all items in the DB'
           schema:
-            type:
+            type: array
             items:
               type: string
