@@ -3,5 +3,9 @@ FROM centos:latest
 RUN yum -y update && yum -y install epel-release && yum -y install httpd php php-guzzlehttp-guzzle
 RUN systemctl enable httpd
 COPY ./*.php /var/www/html/
+COPY ./docker-cmd.sh /
 RUN chmod 644 /var/www/html/*.php
+RUN chmod 755 /docker-cmd.sh
 EXPOSE 80
+
+CMD ["/docker-cmd.sh"]
