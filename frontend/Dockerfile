@@ -4,3 +4,4 @@ RUN yum -y update && yum -y install epel-release && yum -y install httpd php php
 RUN systemctl enable httpd
 COPY ./*.php /var/www/html/
 RUN chmod 644 /var/www/html/*.php
+EXPOSE 80
