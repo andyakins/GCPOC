@@ -1,14 +1,12 @@
-FROM python:3.6-alpine
-RUN apk update
-RUN apk add --no-cache binutils
-RUN apk add --no-cache gcc
-RUN apk add --no-cache musl-dev
-RUN apk add --no-cache mariadb-dev
-RUN apk add --no-cache mariadb-client
-RUN apk add --no-cache mysql-client
+FROM python:3.4.6-alpine
 
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install mysqlclient
+RUN mkdir /gcpoc
+WORKDIR /gcpoc
+ADD . /gcpoc/
 
-CMD ["python3"]
+RUN pip install -r requirements.txt
+
+EXPOSE 8080
+CMD ["python3","app/getService.py"]
