@@ -24,7 +24,6 @@ define('gcpocGuard', TRUE);
     <?php
       require_once "GuzzleHttp/autoload.php";
       require_once "gcpocSettings.php";
-      echo "<p>Trying to connect to {$getURI}<p>";
       $client = new GuzzleHttp\Client();
       $res = $client->get($getURI, []);
       if ($res->getStatusCode() == 200) {
