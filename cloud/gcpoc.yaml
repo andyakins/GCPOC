@@ -1,0 +1,12 @@
+imports:
+- path: gcpoc.py
+- path: container_vm.py
+- path: container_instance_template.py
+- path: container_helper.py
+- path: frontend.py
+
+resources:
+- name: gcpoc
+  type: gcpoc.py
+  properties:
+    zone: us-east1-c
