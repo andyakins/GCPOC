@@ -39,7 +39,7 @@ The entire stack is codified in a Google Deployment Manager orchestration, allow
 
 This should build the entire stack into your Goggle Cloud Project. You can destroy the stack via the GUI or gcloud command.
 
-NOTE: If you want to rebuild/change the project, and use your own versions, you must deploy your Docker containers to DockerHub, and change the name of the dockerImage value(s) in GCPOC/cloud/gcpoc.py to point to your containers.
+NOTE: If you want to rebuild/change the project, and use your own versions, you must deploy your Docker containers to DockerHub, and change the name of the dockerImage value(s) in GCPOC/cloud/gcpoc.py to point to your containers. For local deployments of the docker containers, I made a helpful envvars.sh script to set the appropriate environment variables - which must also be passed to the containers upon running. You'll want to create the containers in the following order: database->microservices->frontend.
 
 Things that could still be done (future work):
   * Use the Google Container Engine instead of container-optimized vms
