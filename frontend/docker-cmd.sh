@@ -14,6 +14,4 @@ echo "\$postURI='$GCPOC_POST_URI';" >> /var/www/html/gcpocSettings.php
 echo "?>" >> /var/www/html/gcpocSettings.php
 
 # start apache
-setsebool -P httpd_can_network_connect on
-
 exec httpd -DFOREGROUND
