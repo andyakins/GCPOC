@@ -16,7 +16,7 @@ define('gcpocGuard', TRUE);
 
       $client = new GuzzleHttp\Client();
       $res = $client->post($postURI,
-        array('form_params' => array(
+        array('body' => array(
           'instring' => $instring
         )
       ));
