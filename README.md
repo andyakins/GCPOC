@@ -34,10 +34,12 @@ The entire stack is codified in a Google Deployment Manager orchestration, allow
   * Check out the code from https://github.com/andyakins/GCPOC
   * Have the gcloud CLI installed on your local machine, configured and initialized. In particular, your Project should be selected.
   * Create a Google API Application Credential JSON file for your project. Copy this file to GCPOC/getService/credentials.json AND GCPOC/postService/credentials.json . Failure will do this will cause the microservices to fail due to failed authentication.
-  * Change directory to GCPOC/Cloud
+  * Change directory to GCPOC/cloud
   * Run the orchestration, where <name> is what you want to name this deployment (like "demo"): gcloud deployment-manager deployments create <name> --config gcpoc.yaml
 
 This should build the entire stack into your Goggle Cloud Project. You can destroy the stack via the GUI or gcloud command.
+
+NOTE: If you want to rebuild/change the project, and use your own versions, you must deploy your Docker containers to DockerHub, and change the name of the dockerImage value(s) in GCPOC/cloud/gcpoc.py to point to your containers.
 
 Things that could still be done (future work):
   * Use the Google Container Engine instead of container-optimized vms
