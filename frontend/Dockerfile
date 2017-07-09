@@ -2,8 +2,8 @@ FROM centos:latest
 
 RUN yum -y update && yum -y install epel-release
 RUN yum -y install httpd php php-guzzlehttp-guzzle
+RUN yum -y net-tools
 RUN systemctl enable httpd
-RUN systemctl disable firewalld
 COPY ./*.php /var/www/html/
 COPY ./docker-cmd.sh /
 RUN chmod 644 /var/www/html/*.php
