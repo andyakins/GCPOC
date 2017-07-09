@@ -50,7 +50,8 @@ def GenerateConfig(context):
           'GCPOC_DB_HOST':'$(ref.' + database + '.networkInterfaces[0].networkIP)',
           'GCPOC_DB_USER':'GCPOC',
           'GCPOC_DB_PASSWORD':'GCPOCPassword',
-          'GCPOC_DB_DATABASE':'GCPOC'
+          'GCPOC_DB_DATABASE':'GCPOC',
+          'GOOGLE_APPLICATION_CREDENTIALS':'/gcpoc/credentials.json'
         },
         'port': post_port
       }

@@ -42,7 +42,7 @@ def GenerateConfig(context):
       'type': 'compute.v1.httpHealthCheck',
       'properties': {
           'port': context.properties['port'],
-          'requestPath': '/gcpoc.php'
+          'requestPath': '/'
       }
   }, {
       'name': name + '-tp',
