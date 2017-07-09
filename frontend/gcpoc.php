@@ -20,8 +20,9 @@
     <h2>The current contents of the database:</h2>
     <?php
       require_once "GuzzleHttp/autoload.php";
+      require_once "gcpocSettings.php"
       $client = new GuzzleHttp\Client();
-      $res = $client->get($_ENV['GCPOC_GET_URI'], []);
+      $res = $client->get($getURI, []);
       if ($res->getStatusCode() == 200) {
         $array = json_decode($res->getBody(),true);
         echo "<ul>";

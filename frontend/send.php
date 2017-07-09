@@ -6,10 +6,12 @@
     <h1>Google Cloud POC</h1>
     <?php
       require_once "GuzzleHttp/autoload.php";
+      require_once "gcpocSettings.php"
+
       $instring = $_POST['instring'];
 
       $client = new GuzzleHttp\Client();
-      $res = $client->post($_ENV['GCPOC_POST_URI'],
+      $res = $client->post($postURI,
         array('form_params' => array(
           'instring' => $instring
         )
