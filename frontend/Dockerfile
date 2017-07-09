@@ -1,6 +1,6 @@
 FROM centos:latest
 
-RUN yum -y update && yum -y install epel-release && yum -y install httpd php php-guzzlehttp-guzzle
+RUN yum -y update && yum -y install epel-release && yum -y install httpd php php-guzzlehttp-guzzle libselinux-utils
 RUN systemctl enable httpd
 COPY ./*.php /var/www/html/
 COPY ./docker-cmd.sh /
