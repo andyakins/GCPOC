@@ -1,3 +1,6 @@
+<?php
+define('gcpocGuard', TRUE);
+?>
 <html>
   <head>
     <title>Google Cloud POC</title>
@@ -20,7 +23,7 @@
     <h2>The current contents of the database:</h2>
     <?php
       require_once "GuzzleHttp/autoload.php";
-      require_once "gcpocSettings.php"
+      require_once "gcpocSettings.php";
       $client = new GuzzleHttp\Client();
       $res = $client->get($getURI, []);
       if ($res->getStatusCode() == 200) {

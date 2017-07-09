@@ -1,3 +1,6 @@
+<?php
+define('gcpocGuard', TRUE);
+?>
 <html>
   <head>
     <title>Google Cloud POC</title>
@@ -6,7 +9,8 @@
     <h1>Google Cloud POC</h1>
     <?php
       require_once "GuzzleHttp/autoload.php";
-      require_once "gcpocSettings.php"
+      require_once "gcpocSettings.php";
+
 
       $instring = $_POST['instring'];
 
